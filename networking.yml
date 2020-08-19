@@ -44,6 +44,17 @@ Resources:
         - Key: Name
           Value: !Ref EnvironmentName
 
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Name: Name
+          Key: !Ref EnvironmentName
+  InternetGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref VPC
+
 Outputs:
   VPC:
     Description: A reference to the created VPC for this project
