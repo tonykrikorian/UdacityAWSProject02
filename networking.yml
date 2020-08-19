@@ -50,6 +50,7 @@ Resources:
       Tags:
         - Name: Name
           Key: !Ref EnvironmentName
+
   InternetGatewayAttachment:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
