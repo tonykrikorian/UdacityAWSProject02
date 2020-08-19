@@ -48,12 +48,13 @@ Resources:
     Type: AWS::EC2::InternetGateway
     Properties:
       Tags:
-        - Name: Name
-          Key: !Ref EnvironmentName
+        - Key: Name
+          Value: !Ref EnvironmentName
 
   InternetGatewayAttachment:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
+      InternetGatewayId: !Ref InternetGateway
       VpcId: !Ref VPC
 
 Outputs:
