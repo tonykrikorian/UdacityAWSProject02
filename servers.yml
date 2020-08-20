@@ -74,8 +74,8 @@ Resources:
         - Fn::ImportValue: !Sub "${EnvironmentName}-PRIV-NETS"
       LaunchConfigurationName:
         Ref: WebAppLaunchConfig
-      MinSize: "3"
-      MaxSize: "5"
+      MinSize: "4"
+      MaxSize: "4"
       TargetGroupARNs:
         - Ref: WebAppTargetGroup
   WebAppLB:
@@ -105,14 +105,14 @@ Resources:
           TargetGroupArn: !Ref "WebAppTargetGroup"
       Conditions:
         - Field: path-pattern
-          Values: [/ogani]
+          Values: [/ogani/index.html]
       ListenerArn: !Ref "Listener"
       Priority: 1
   WebAppTargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
       HealthCheckIntervalSeconds: 10
-      HealthCheckPath: /ogani
+      HealthCheckPath: /ogani/index.html
       HealthCheckProtocol: HTTP
       HealthCheckTimeoutSeconds: 8
       HealthyThresholdCount: 2
