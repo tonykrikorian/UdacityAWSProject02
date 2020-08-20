@@ -134,6 +134,14 @@ Resources:
         - Key: Name
           Value: !Sub ${EnvironmentName}-NATGateway(AZ2)
 
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: !Sub ${EnvironmentName}-PublicRouteTable
+
 Outputs:
   VPC:
     Description: A reference to the created VPC for this project
