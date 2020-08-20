@@ -122,3 +122,9 @@ Resources:
       VpcId:
         Fn::ImportValue:
           Fn::Sub: "${EnvironmentName}-VPCID"
+Outputs:
+  LoadBalancerDNSName:
+    Description: Load Balancer internet facing URL
+    Value: !Join ["", ["http://", !GetAtt WebAppLB.DNSName, "/ogani"]]
+    Export:
+      Name: !Sub ${EnvironmentName}-LB-URL
