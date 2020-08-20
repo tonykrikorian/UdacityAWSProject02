@@ -105,14 +105,14 @@ Resources:
           TargetGroupArn: !Ref "WebAppTargetGroup"
       Conditions:
         - Field: path-pattern
-          Values: [/ogani/index.html]
+          Values: [/ogani]
       ListenerArn: !Ref "Listener"
       Priority: 1
   WebAppTargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
       HealthCheckIntervalSeconds: 10
-      HealthCheckPath: /ogani/index.html
+      HealthCheckPath: /ogani
       HealthCheckProtocol: HTTP
       HealthCheckTimeoutSeconds: 8
       HealthyThresholdCount: 2
