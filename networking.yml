@@ -154,6 +154,12 @@ Outputs:
         Export:
           Name: !Sub ${EnvironmentName}-PUB-NETS
 
+  VPCPublicRouteTable:
+    Description: Public Routing
+    Value: !Ref PublicRouteTable
+    Export:
+      Name: !Sub ${EnvironmentName}-PUB-RT
+
   PrivateSubnets:
     Description: A list of the private subnets
     Value: !Join [",", [!Ref PrivateSubnet1, !Ref PrivateSubnet2]]
