@@ -7,13 +7,13 @@ Parameters:
     Type: String
   BastionServerAMIID:
     Description: AMI ID of the Bastion (JumpBox) VM Server
-    Type: String 
+    Type: String
   InstanceType:
     Description: Instance Type of the Bastion (JumpBox) VM Server
-    Type: String 
+    Type: String
   AccessKeyName:
     Description: Instance Type of the Bastion (JumpBox) VM Server
-    Type: String 
+    Type: String
 Resources:
   ProfileWithRolesForOurApp:
     Type: AWS::IAM::InstanceProfile
@@ -44,7 +44,7 @@ Resources:
       VpcId:
         Fn::ImportValue: !Sub "${EnvironmentName}-VPCID"
       SecurityGroupIngress:
-       - IpProtocol: tcp
+        - IpProtocol: tcp
           FromPort: 22
           ToPort: 22
           CidrIp: 0.0.0.0/0
@@ -65,7 +65,7 @@ Resources:
           FromPort: 80
           ToPort: 80
           CidrIp: 0.0.0.0/0
-       - IpProtocol: tcp
+        - IpProtocol: tcp
           FromPort: 22
           ToPort: 22
           CidrIp: 0.0.0.0/0
@@ -152,26 +152,24 @@ Resources:
       VpcId:
         Fn::ImportValue:
           Fn::Sub: "${EnvironmentName}-VPCID"
-  
-BastionPublicServer1:
-  Type: AWS::EC2::Instance
-  DependsOn: Fn::ImportValue: !Sub "${EnvironmentName}-VPCID" 
-  Properties: 
-    AvailabilityZone: !Select [0, !GetAZs ""]
-    IamInstanceProfile: !Ref ProfileWithRolesForOurApp
-    ImageId: !Ref BastionServerAMIID
-    InstanceType: !Ref InstanceType
-    KeyName: !Ref AccessKeyName
-    Monitoring: False  
-    SecurityGroupIds: 
-      - !GetAtt: BastionServerSecGroup.GroupId
-    SecurityGroups: 
-      - Ref: BastionServerSecGroup
-    SourceDestCheck: False
-    SubnetId: Fn::ImportValue: !Sub "${EnvironmentName}-PUB1-SN"
-    Tags: 
-      - Key: Name 
-        Value: !Sub "${EnvironmentName}-JumpBox"
+
+  BastionPublicServer1:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: !Select [0, !GetAZs ""]
+      IamInstanceProfile: !Ref ProfileWithRolesForOurApp
+      ImageId: !Ref BastionServerAMIID
+      InstanceType: !Ref InstanceType
+      KeyName: !Ref AccessKeyName
+      Monitoring: False
+      SecurityGroupIds:
+        - !GetAtt "BastionServerSecGroup.GroupId"
+      SourceDestCheck: False
+      SubnetId:
+        Fn::ImportValue: !Sub "${EnvironmentName}-PUB1-SN"
+      Tags:
+        - Key: Name
+          Value: !Sub "${EnvironmentName}-JumpBox"
 Outputs:
   LoadBalancerDNSName:
     Description: Load Balancer internet facing URL
