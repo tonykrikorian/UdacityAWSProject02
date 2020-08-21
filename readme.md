@@ -16,27 +16,27 @@ Files:
 
 1. Script "aws-create-stack.ps1"
    Parameters:
-   $stack: CloudFormation Stack Name
-        $template: Filename (network.yml or servers.yml)
-   \$params = params filename (networking-params.json servers-params.json )
+   * $stack: CloudFormation Stack Name
+   * $template: Filename (network.yml or servers.yml)
+   * $params = params filename (networking-params.json servers-params.json )
 
-   Example 1: Create Networking Stack
+   **Example 1: Create Networking Stack**
   
      `.\aws-create-stack.ps1 udacity-project-networking networking.yml networking-params.json`
 
-   Example 2: Create Servers Stack
+   **Example 2: Create Servers Stack**
   
    `.\aws-create-stack.ps1 udacity-project-servers servers.yml servers-params.json`
   
 
 2.  Script "aws-update-stack.ps1"
    Parameters:
-   $stack: CloudFormation Stack Name
-        $template: Filename (network.yml or servers.yml)
-   \$params = params filename (networking-params.json servers-params.json )
+   * $stack: CloudFormation Stack Name
+   * $template: Filename (network.yml or servers.yml)
+   * $params = params filename (networking-params.json servers-params.json )
 
-   Example 1: Update existing Networking Stack
-   .\aws-update-stack.ps1 udacity-project-networking networking.yml networking-params.json
+   **Example 1: Update existing Networking Stack**
+   `.\aws-update-stack.ps1 udacity-project-networking networking.yml networking-params.json`
 
-   Example 2: Update existing Servers Stack
-   .\aws-update-stack.ps1 udacity-project-servers servers.yml servers-params.json
+   **Example 2: Update existing Servers Stack**
+   `.\aws-update-stack.ps1 udacity-project-servers servers.yml servers-params.json`
