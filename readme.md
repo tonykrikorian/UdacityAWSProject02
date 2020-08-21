@@ -16,9 +16,9 @@ Files:
 
 1. Script **"aws-create-stack.ps1"**
    Parameters:
-  * **$stack**: CloudFormation Stack Name
-  * **$template:** Filename (network.yml or servers.yml)
-  * **$params**:params filename (networking-params.json servers-params.json )
+  * **stack**: CloudFormation Stack Name
+  * **template:** Filename (network.yml or servers.yml)
+  * **params**:params filename (networking-params.json servers-params.json )
 
    **Example 1: Create Networking Stack**
   
@@ -28,12 +28,13 @@ Files:
   
    `.\aws-create-stack.ps1 udacity-project-servers servers.yml servers-params.json`
   
+## Update existing AWS CloudFormation Stack
 
-2.  Script **"aws-update-stack.ps1"**
+1.  Script **"aws-update-stack.ps1"**
    Parameters:
-  * **$stack**: CloudFormation Stack Name
-  * **$template:** Filename (network.yml or servers.yml)
-  * **$params**:params filename (networking-params.json servers-params.json )
+  * **stack**: CloudFormation Stack Name
+  * **template:** Filename (network.yml or servers.yml)
+  * **params**:params filename (networking-params.json servers-params.json )
 
    **Example 1: Update existing Networking Stack**
    
