@@ -1,0 +1,18 @@
+[
+  {
+    "ParameterKey": "EnvironmentName",
+    "ParameterValue": "AWS-UdacityProject02"
+  },
+  {
+    "ParameterKey": "BastionServerAMIID",
+    "ParameterValue": "ami-0a07be880014c7b8e"
+  },
+  {
+    "ParameterKey": "InstanceType",
+    "ParameterValue": "t2.micro"
+  },
+  {
+    "ParameterKey": "AccessKeyName",
+    "ParameterValue": "ssh-jump-box"
+  }
+]
