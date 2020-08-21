@@ -12,7 +12,7 @@ Files:
 * **aws-create-stack.ps1**: Powershell script to create AWS CloudFormation Stack
 * **aws-update-stack.ps1**: Powershell script to update AWS CloudFormation Stack
 
-create AWS CloudFormation Stack
+## Create AWS CloudFormation Stack
 
 1. Script "aws-create-stack.ps1"
    Parameters:
