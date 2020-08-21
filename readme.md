@@ -1,4 +1,4 @@
-# Deploy a High-Availability Web App using CloudFormation /Tony Krikorian /Udacity 2020
+# Deploy a High-Availability Web App using CloudFormation Udacity 2020
 
 NOTE: I Deploy my own website template, you can verify it in http://udaci-WebAp-1X89QITLHE8HD-1596378322.us-west-2.elb.amazonaws.com/ogani
 
@@ -36,7 +36,9 @@ Files:
    * $params = params filename (networking-params.json servers-params.json )
 
    **Example 1: Update existing Networking Stack**
+   
    `.\aws-update-stack.ps1 udacity-project-networking networking.yml networking-params.json`
 
    **Example 2: Update existing Servers Stack**
+   
    `.\aws-update-stack.ps1 udacity-project-servers servers.yml servers-params.json`
