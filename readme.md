@@ -3,14 +3,14 @@
 NOTE: I Deploy my own website template, you can verify it in http://udaci-WebAp-1X89QITLHE8HD-1596378322.us-west-2.elb.amazonaws.com/ogani
 
 Files:
-* ogani.zip: Website deployed in AWS
-* AWS-Udacity-Project02.png : Infrastructure diagram
-* networking.yml: Script to create VPC, Subnets, Route Tables, NAT Gateways, Internet Gateway and so on ..
-* networking-params.json: networking.yml needed parameters
-* servers.yml: Script to create Security Gropus, Load Balancer, Elastic IP, VM Servers.
-* servers-params.json: servers.yml needed parameters.
-* aws-create-stack.ps1: Powershell script to create AWS CloudFormation Stack
-* aws-update-stack.ps1: Powershell script to update AWS CloudFormation Stack
+* **ogani.zip**: Website deployed in AWS
+* **AWS-Udacity-Project02.png** : Infrastructure diagram
+* **networking.yml**: Script to create VPC, Subnets, Route Tables, NAT Gateways, Internet Gateway and so on ..
+* **networking-params.json**: networking.yml needed parameters
+* **servers.yml**: Script to create Security Gropus, Load Balancer, Elastic IP, VM Servers.
+* **servers-params.json**: servers.yml needed parameters.
+* **aws-create-stack.ps1**: Powershell script to create AWS CloudFormation Stack
+* **aws-update-stack.ps1**: Powershell script to update AWS CloudFormation Stack
 
 create AWS CloudFormation Stack
 
